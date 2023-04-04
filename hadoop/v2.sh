@@ -31,7 +31,7 @@ do
         continue
     fi
     sshpass -p $passwd ssh ubuntu@$i -o StrictHostKeyChecking=no "sudo apt-get install git"
-    sshpass -p $passwd ssh ubuntu@$i -o StrictHostKeyChecking=no "git clone https://github.com/boanlab/aporrima.git; ./aporrima/hadoop/step1to3.sh $all"
+    sshpass -p $passwd ssh ubuntu@$i -o StrictHostKeyChecking=no "git clone https://github.com/boanlab/Aaporrima.git; ./aporrima/hadoop/step1to3.sh $all"
 done
 
 
