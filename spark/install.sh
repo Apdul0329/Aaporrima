@@ -8,23 +8,23 @@ case $response in
     1)
         echo "Set up local standalone mode"
         echo "Start install Spark"
-        echo -n "spark" | su - spark -c "./aporrima/spark/install-spark.sh"
-        echo -n "spark" | su - spark -c "./aporrima/spark/setting-standalone.sh"
+        echo -n "spark" | su - spark -c "./Aaporrima/spark/install-spark.sh"
+        echo -n "spark" | su - spark -c "./Aaporrima/spark/setting-standalone.sh"
         ;;
     2)
         echo "Set up standalone cluster mode"
         ./aporrima/spark/add-host.sh
-        echo -n "spark" | su - spark -c "./aporrima/spark/install-spark.sh"
-        echo -n "spark" | su - spark -c "./aporrima/spark/setting-standalone-cluster.sh"
+        echo -n "spark" | su - spark -c "./Aaporrima/spark/install-spark.sh"
+        echo -n "spark" | su - spark -c "./Aaporrima/spark/setting-standalone-cluster.sh"
         echo -n "spark" | su - spark -c "./spark/sbin/start-all.sh"
         ;;
     3)
         echo "Set up Spark on YARN mode"
         echo "Start install Spark"
         sudo sed -i'' -r -e "/# User privilege specification/a\hadoop  ALL=(ALL) NOPASSWD:ALL" /etc/sudoers
-        echo -n "hadoop" | su - hadoop -c "./aporrima/spark/install-spark.sh"
+        echo -n "hadoop" | su - hadoop -c "./Aaporrima/spark/install-spark.sh"
         cat <<EOF | sudo tee /etc/profile.d/hadoop.sh
-export HADOOP_HOME=/home/hadoop/hadoop-3.3.4
+export HADOOP_HOME=/home/hadoop/hadoop-3.2.4
 export HADOOP_INSTALL=\$HADOOP_HOME 
 export HADOOP_MAPRED_HOME=\$HADOOP_HOME
 
@@ -40,6 +40,6 @@ export PATH=\$PATH:\$HADOOP_HOME/sbin:\$HADOOP_HOME/bin
 export HADOOP_OPTS="-Djava.library.path=\$HADOOP_HOME/lib/native"
 EOF
         source /etc/profile.d/hadoop.sh
-        echo -n "hadoop" | su - hadoop -c "./aporrima/spark/setting-spark-on-yarn.sh"
+        echo -n "hadoop" | su - hadoop -c "./Aaporrima/spark/setting-spark-on-yarn.sh"
         ;;
 esac
