@@ -9,13 +9,13 @@ sudo sed -i "/PasswordAuthentication/ c\PasswordAuthentication yes" /etc/ssh/ssh
 sudo sed -i "/PermitRootLogin/ c\PermitRootLogin yes" /etc/ssh/sshd_config
 sudo systemctl restart sshd
 
-./aporrima/spark/add-spark-user.sh
-echo -n "spark" | su - spark -c "git clone https://github.com/boanlab/aporrima.git"
+./Aaporrima/spark/add-spark-user.sh
+echo -n "spark" | su - spark -c "git clone https://github.com/psy337337/Aaporrima.git"
 sleep 1
 
 echo "Start install JAVA"
-echo -n "spark" | su - spark -c "./aporrima/spark/install-java.sh"
+echo -n "spark" | su - spark -c "./Aaporrima/spark/install-java.sh"
 sleep 1
 
 echo "Start install Python3"
-echo -n "spark" | su - spark -c "./aporrima/spark/install-python.sh"
+echo -n "spark" | su - spark -c "./Aaporrima/spark/install-python.sh"
