@@ -23,8 +23,8 @@ EOF
 
 cp spark/conf/spark-env.sh.template spark/conf/spark-env.sh
 cat <<EOF | sudo tee spark/conf/spark-env.sh
-export HADOOP_CONF_DIR=/home/hadoop/hadoop-3.3.4/etc/hadoop/
-export HADOOP_HOME=/home/hadoop/hadoop-3.3.4/
+export HADOOP_CONF_DIR=/home/hadoop/hadoop-3.2.4/etc/hadoop/
+export HADOOP_HOME=/home/hadoop/hadoop-3.2.4/
 export PYSPARK_PYTHON=/usr/bin/python3
 export PYSPARK_DRIVER_PYTHON=jupyter
 EOF
