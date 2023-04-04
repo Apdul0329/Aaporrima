@@ -1,6 +1,6 @@
 
 #!/bin/bash
 
-./aporrima/hadoop/install.sh
-./aporrima/hadoop/hostset.sh $@
-./aporrima/hadoop/makeUser.sh
+./Aaporrima/hadoop/install.sh
+./Aaporrima/hadoop/hostset.sh $@
+./Aaporrima/hadoop/makeUser.sh
