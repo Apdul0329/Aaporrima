@@ -30,13 +30,13 @@ do
         num=$(($num+1))
         continue
     fi
-    sshpass -p $passwd ssh ubuntu@$i -o StrictHostKeyChecking=no "sudo apt-get install git"
-    sshpass -p $passwd ssh ubuntu@$i -o StrictHostKeyChecking=no "git clone https://github.com/psy337337/Aaporrima.git; ./Aaporrima/hadoop/step1to3.sh $all"
+    sshpass -p $passwd ssh ubuntu@$i -o StrictHostKeyChecking=no "echo 'ubuntu' | sudo apt-get install git"
+    sshpass -p $passwd ssh ubuntu@$i -o StrictHostKeyChecking=no "git clone https://github.com/Apdul0329/Aaporrima.git; ./Aaporrima/hadoop/step1to3.sh $all"
 done
 
 
 # connect NameNode
-sshpass -p hadoop ssh hadoop@hdn -o StrictHostKeyChecking=no -t "cd; git clone https://github.com/psy337337/Aaporrima.git; ./Aaporrima/hadoop/connect.sh"
+sshpass -p hadoop ssh hadoop@hdn -o StrictHostKeyChecking=no -t "cd; git clone https://github.com/Apdul0329/Aaporrima.git; ./Aaporrima/hadoop/connect.sh"
 
 
 # connect DataNode
@@ -47,7 +47,7 @@ do
         num=$(($num+1))
         continue
     fi
-    sshpass -p hadoop ssh hadoop@$i -o StrictHostKeyChecking=no -t "cd; git clone https://github.com/psy337337/Aaporrima.git; ./Aaporrima/hadoop/connect.sh"
+    sshpass -p hadoop ssh hadoop@$i -o StrictHostKeyChecking=no -t "cd; git clone https://github.com/Apdul0329/Aaporrima.git; ./Aaporrima/hadoop/connect.sh"
 done
 
 
