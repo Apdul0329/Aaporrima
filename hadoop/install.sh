@@ -11,16 +11,16 @@ fi
 # update repo JAVA, ssh, net-tools, sshpass 
 sudo apt-get update
 if [ "$(which java)" == "" ]; then
-    sudo apt install openjdk-11-jdk -y
+    echo "ubuntu" | sudo apt install openjdk-11-jdk -y
 fi
 if [ "$(which ssh)" == "" ]; then
-    sudo apt install openssh-server openssh-client -y
+    echo "ubuntu" | sudo apt install openssh-server openssh-client -y
 fi
 if [ "$(which netstat)" == "" ]; then
-    sudo apt install net-tools
+    echo "ubuntu" | sudo apt install net-tools
 fi
 if [ "$(which sshpass)" == "" ]; then
-    sudo apt-get install sshpass
+    echo "ubuntu" | sudo apt-get install sshpass
 fi
 
 
